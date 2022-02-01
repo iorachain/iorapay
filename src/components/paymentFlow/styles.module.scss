@@ -13,6 +13,9 @@
     width: 80vh;
     background-color: $light_gray;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .leftForm {

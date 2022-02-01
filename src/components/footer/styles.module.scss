@@ -1,0 +1,20 @@
+@import "../../style/global.scss";
+
+#Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  padding: 15px 30px;
+  border-top: 1px solid #dadce0;
+  font-size: 15px;
+  justify-content: space-between;
+  align-items: center;
+
+  .rightFooter {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
