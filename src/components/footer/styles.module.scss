@@ -8,13 +8,23 @@
   display: flex;
   padding: 15px 30px;
   border-top: 1px solid #dadce0;
-  font-size: 15px;
   justify-content: space-between;
   align-items: center;
+  font-size: 12px;
 
   .rightFooter {
     width: 200px;
     display: flex;
     justify-content: space-around;
+  }
+
+  .leftFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin-left: 5px;
+    }
   }
 }

@@ -12,6 +12,9 @@
 body {
   font-family: Poppins, sans-serif;
   background: $white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 ul,
@@ -44,4 +47,7 @@ p {
   margin-bottom: 0;
   font-size: 24px;
   line-height: 36px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
 }

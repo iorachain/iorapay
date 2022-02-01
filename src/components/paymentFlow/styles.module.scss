@@ -9,7 +9,7 @@
   }
 
   .leftSection {
-    height: 70vh;
+    height: 75vh;
     width: 80vh;
     background-color: $light_gray;
     border-radius: 15px;
@@ -36,14 +36,62 @@
     align-items: center;
     justify-content: center;
     width: 80vh;
-    height: 70vh;
+    height: 75vh;
   }
 
-  .rightButtons {
+  .walletConnect {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     height: 40vh;
+  }
+
+  .pixSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-size: 16px;
+
+    span {
+      margin-top: 8px;
+    }
+  }
+
+  .discordButton {
+    display: flex;
+    width: 210px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .supportSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    text-align: center;
+  }
+
+  .supportButton {
+    margin-top: 30px;
+  }
+
+  .waitingSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .supportTitle {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 800;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
   }
 }

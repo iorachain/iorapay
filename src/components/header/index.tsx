@@ -28,20 +28,6 @@ const Header = () => {
               <li className={styles.navItem}>Wallet</li>
             </Nav.Item>
           </RLink>
-          <RLink
-            to="roadmap"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={600}
-            delay={100}
-            className={styles.navLink}
-            onClick={close}
-          >
-            <Nav.Item>
-              <li className={styles.navItem}>Bridge</li>
-            </Nav.Item>
-          </RLink>
           <div className="rounded-circle border">
             <Image
               height={40}

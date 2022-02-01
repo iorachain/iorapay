@@ -1,8 +1,9 @@
 import styles from "./styles.module.scss";
-import MetamaskSVG from "../../assets/imgs/metamask.svg";
-import { Image, Container } from "react-bootstrap";
-import Button from "../UI/Button";
 import PaymentForm from "../paymentForm/";
+import Step1 from "../paymentFlow/step1";
+import Step2 from "../paymentFlow/step2";
+import Step3RightContainer from "./step3RightContainer";
+import Step3LeftContainer from "./step3LeftContainer";
 
 const Home = () => {
   return (
@@ -10,16 +11,11 @@ const Home = () => {
       <div className={styles.paySection}>
         <div className={styles.leftSection}>
           <div className={styles.leftButtons}>
-            <Container>
-              <PaymentForm />
-            </Container>
+            <PaymentForm />
           </div>
         </div>
         <div className={styles.rightSection}>
-          <div className={styles.rightButtons}>
-            <Image src={MetamaskSVG} alt="Connect by Metamask" width={120} />
-            <Button>CONNECT METAMASK</Button>
-          </div>
+          <Step1 />
         </div>
       </div>
     </section>

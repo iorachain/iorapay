@@ -54,7 +54,7 @@ const PaymentForm = () => {
             <option>Binance Smart Chain</option>
           </Form.Select>
         </Form.Group>
-        <Form.Group className="mt-3" controlId="formPIXChecked">
+        <Form.Group className="mt-3 pb-4" controlId="formPIXChecked">
           <Form.Label className={styles.labelForm}>PAYMENT METHOD</Form.Label>
           <Form.Check
             className={styles.inputCheck}
