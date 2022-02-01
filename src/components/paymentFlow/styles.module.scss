@@ -1,7 +1,46 @@
-#PaymentFlow {
-  margin: 10vh 2vh;
+@import "../../style/global.scss";
 
+#PaymentFlow {
   .paySection {
-    padding: 30px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leftSection {
+    height: 70vh;
+    width: 80vh;
+    background-color: $light_gray;
+    border-radius: 15px;
+  }
+
+  .leftForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
+
+    :first-child {
+      font-family: Manrope;
+      font-weight: 800;
+    }
+  }
+
+  .rightSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vh;
+    height: 70vh;
+  }
+
+  .rightButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
   }
 }
