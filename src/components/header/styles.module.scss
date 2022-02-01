@@ -1,0 +1,21 @@
+@import url(../../style/global.scss);
+
+#Header {
+  .navbar {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    transition: height 0.7ms 0.3s ease;
+    margin: auto;
+    padding: 0px 30px;
+    list-style: none;
+    li {
+      cursor: pointer;
+    }
+    
+  }
+  .navItem {
+      font-size: 12px;
+      margin-right: 25px;
+  }
+}

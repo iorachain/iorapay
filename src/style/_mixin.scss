@@ -1,0 +1,106 @@
+// Breakpoint	Media Query
+// xs	'screen and (max-width: 599px)'
+// sm	'screen and (min-width: 600px) and (max-width: 959px)'
+// md	'screen and (min-width: 960px) and (max-width: 1279px)'
+// lg	'screen and (min-width: 1280px) and (max-width: 1919px)'
+// xl	'screen and (min-width: 1920px) and (max-width: 5000px)'
+// lt-sm	'screen and (max-width: 599px)'
+// lt-md	'screen and (max-width: 959px)'
+// lt-lg	'screen and (max-width: 1279px)'
+// lt-xl	'screen and (max-width: 1919px)'
+// gt-xs	'screen and (min-width: 600px)'
+// gt-sm	'screen and (min-width: 960px)'
+// gt-md	'screen and (min-width: 1280px)'
+// gt-lg	'screen and (min-width: 1920px)'
+
+// media aliases and breakpoints
+$screenSmMin: 600px;
+$screenMdMin: 960px;
+$screenLgMin: 1280px;
+$screenXlMin: 1920px;
+$screenXsMax: 599px;
+$screenSmMax: 959px;
+$screenMdMax: 1279px;
+$screenLgMax: 1919px;
+$screenXlMax: 5000px;
+
+// media devices
+@mixin xs {
+  @media screen and (max-width: #{$screenXsMax}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (min-width: #{$screenSmMin}) and (max-width: #{$screenSmMax}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: #{$screenMdMin}) and (max-width: #{$screenMdMax}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: #{$screenLgMin}) and (max-width: #{$screenLgMax}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: #{$screenXlMin}) and (max-width: #{$screenXlMax}) {
+    @content;
+  }
+}
+
+// media lt queries
+@mixin lt-sm {
+  @media screen and (max-width: #{$screenXsMax}) {
+    @content;
+  }
+}
+
+@mixin lt-md {
+  @media screen and (max-width: #{$screenSmMax}) {
+    @content;
+  }
+}
+
+@mixin lt-lg {
+  @media screen and (max-width: #{$screenMdMax}) {
+    @content;
+  }
+}
+
+@mixin lt-xl {
+  @media screen and (max-width: #{$screenLgMax}) {
+    @content;
+  }
+}
+
+// media gt queries
+@mixin gt-xs {
+  @media screen and (min-width: #{$screenSmMin}) {
+    @content;
+  }
+}
+
+@mixin gt-sm {
+  @media screen and (min-width: #{$screenMdMin}) {
+    @content;
+  }
+}
+
+@mixin gt-md {
+  @media screen and (min-width: #{$screenLgMin}) {
+    @content;
+  }
+}
+
+@mixin gt-lg {
+  @media screen and (min-width: #{$screenXlMin}) {
+    @content;
+  }
+}
