@@ -4,20 +4,21 @@ import Step1 from "../paymentFlow/step1";
 import Step2 from "../paymentFlow/step2";
 import Step3RightContainer from "./step3RightContainer";
 import Step3LeftContainer from "./step3LeftContainer";
+import { Container, Row, Col } from "react-bootstrap";
 
 const Home = () => {
   return (
     <section id={styles.PaymentFlow}>
-      <div className={styles.paySection}>
-        <div className={styles.leftSection}>
+      <Row className={styles.paySection}>
+        <Col className={styles.leftSection} xs={12} md={6}>
           <div className={styles.leftButtons}>
             <PaymentForm />
           </div>
-        </div>
-        <div className={styles.rightSection}>
+        </Col>
+        <Col className={styles.rightSection} xs={12} md={6}>
           <Step1 />
-        </div>
-      </div>
+        </Col>
+      </Row>
     </section>
   );
 };
