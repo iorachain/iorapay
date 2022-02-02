@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
 const PaymentForm = () => {
   const PIXPayment = (
     <span>
-      <Image src={PIX} alt="Pay with PIX" />
+      <Image color="#59beac" src={PIX} alt="Pay with PIX" />
       PAY WITH PIX
     </span>
   );

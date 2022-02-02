@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 import { Image, Navbar, Nav } from "react-bootstrap";
 import { Link as RLink } from "react-scroll";
+import IoraWalletLogo from "../../assets/imgs/logo.svg";
 
 const Header = () => {
   return (
@@ -8,6 +9,7 @@ const Header = () => {
       <Navbar className={styles.navbar}>
         <Navbar.Brand href="#home">
           <div className={styles.navbarBrand}>
+            <Image height={25} src={IoraWalletLogo} alt="" />{" "}
             <span>
               <b>iora</b>wallet
             </span>
