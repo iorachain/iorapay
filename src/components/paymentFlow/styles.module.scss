@@ -14,7 +14,6 @@
     @include md {
       flex-direction: column;
     }
-
   }
 
   .leftSection {
@@ -32,7 +31,6 @@
     @include md {
       height: 75vh;
     }
-
   }
 
   .leftForm {
@@ -54,7 +52,6 @@
     justify-content: center;
     width: 80vh;
 
-
     @include xs {
       height: 50vh;
     }
@@ -62,7 +59,6 @@
     @include md {
       height: 75vh;
     }
-
   }
 
   .walletConnect {
@@ -70,14 +66,14 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 40vh;
+    height: 50vh;
 
     @include xs {
       height: 20vh;
     }
 
     @include md {
-      height: 40vh;
+      height: 50vh;
     }
   }
 
@@ -127,5 +123,15 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
+  }
+
+  .walletTite {
+    font-size: 16;
+    margin-bottom: 15px;
+
+    span {
+      font-weight: 800;
+      text-transform: uppercase;
+    }
   }
 }

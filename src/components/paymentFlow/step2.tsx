@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import Button from "../UI/Button";
+import Button from "@mui/material/Button";
 import QRCODE from "../../assets/imgs/qrcode.png";
 import { Image } from "react-bootstrap";
 
@@ -14,7 +14,15 @@ const step2 = () => {
         </span>
       </div>
       <div className="mt-3">
-        <Button>COPY PIX KEY</Button>
+        <Button
+          variant="contained"
+          size="large"
+          onClick={() => {
+            navigator.clipboard.writeText("36518505000190");
+          }}
+        >
+          COPY PIX KEY
+        </Button>
       </div>
     </div>
   );

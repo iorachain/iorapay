@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import Button from "../UI/Button";
+import Button from "@mui/material/Button";
 import DiscordIcon from "../../assets/imgs/icons/discord.svg";
 import { Image } from "react-bootstrap";
 
@@ -17,7 +17,9 @@ const step3 = () => {
         contact.
       </span>
       <div className={styles.supportButton}>
-        <Button>{DiscordCommunity}</Button>
+        <Button size="large" variant="contained">
+          {DiscordCommunity}
+        </Button>
       </div>
     </div>
   );

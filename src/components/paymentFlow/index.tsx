@@ -4,9 +4,18 @@ import Step1 from "../paymentFlow/step1";
 import Step2 from "../paymentFlow/step2";
 import Step3RightContainer from "./step3RightContainer";
 import Step3LeftContainer from "./step3LeftContainer";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import useMetaMask from "hooks/useMetaMask";
+import useMetaMaskChecker from "hooks/useMetamaskChecker";
+import { useEffect } from "react";
 
 const Home = () => {
+  const { isActive } = useMetaMask();
+
+  useEffect(() => {
+    useMetaMaskChecker();
+  });
+
   return (
     <section id={styles.PaymentFlow}>
       <Row className={styles.paySection}>
@@ -16,7 +25,7 @@ const Home = () => {
           </div>
         </Col>
         <Col className={styles.rightSection} xs={12} md={6}>
-          <Step1 />
+          {isActive ? <Step2 /> : <Step1 />}
         </Col>
       </Row>
     </section>
