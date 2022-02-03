@@ -10,18 +10,12 @@ const step2 = () => {
       <div className={styles.pixSection}>
         <span>Academia do Planejamento Sistemas LTDA</span>
         <span>
-          <b>CNPJ: </b>36.518.505/0001-90
+          <b>CNPJ (CHAVE PIX): </b>36.518.505/0001-90
         </span>
       </div>
       <div className="mt-3">
-        <Button
-          variant="contained"
-          size="large"
-          onClick={() => {
-            navigator.clipboard.writeText("36518505000190");
-          }}
-        >
-          COPY PIX KEY
+        <Button variant="contained" size="large">
+          JÁ REALIZEI O PAGAMENTO
         </Button>
       </div>
     </div>

@@ -77,4 +77,21 @@
       margin: 0px 10px 0 5px;
     }
   }
+
+  .buttonSection {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttonPix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    :first-child {
+      margin-right: 10px;
+    }
+  }
 }

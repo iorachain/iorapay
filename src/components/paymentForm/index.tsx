@@ -9,12 +9,13 @@ import {
 } from "react-bootstrap";
 import PIX from "../../assets/imgs/icons/pix.svg";
 import styles from "./styles.module.scss";
+import Button from "@mui/material/Button";
 
 const PaymentForm = () => {
   const PIXPayment = (
-    <span>
+    <span className={styles.buttonPix}>
       <Image height={25} color="#59beac" src={PIX} alt="Pay with PIX" />
-      PAY WITH PIX
+      PAGAR COM PIX
     </span>
   );
 
@@ -68,14 +69,11 @@ const PaymentForm = () => {
             <option>Binance Smart Chain</option>
           </Form.Select>
         </Form.Group>
-        <Form.Group className="mt-3 pb-4" controlId="formPIXChecked">
-          <Form.Label className={styles.labelForm}>PAYMENT METHOD</Form.Label>
-          <Form.Check
-            className={styles.inputCheck}
-            type="radio"
-            label={PIXPayment}
-          />
-        </Form.Group>
+        <div className={styles.buttonSection}>
+          <Button variant="contained" size="large">
+            {PIXPayment}
+          </Button>
+        </div>
       </Form>
     </Container>
   );
