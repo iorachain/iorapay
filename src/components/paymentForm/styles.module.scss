@@ -28,6 +28,16 @@
     font-size: 12px;
   }
 
+  .inputSelectToggle {
+    height: 49px;
+    width: 5%;
+    font-size: 12px;
+
+    :first-child {
+      max-width: 10px;
+    }
+  }
+
   .labelForm {
     font-size: 12px;
   }
@@ -41,6 +51,16 @@
     background: $white;
     font-size: 12px;
     color: $gray;
+
+    button {
+      font-size: 14px;
+    }
+  }
+
+  #asset_select {
+    color: $gray;
+    background: $white;
+    font-size: 12px;
   }
 
   .inputCheck {

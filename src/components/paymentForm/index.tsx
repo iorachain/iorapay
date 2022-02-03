@@ -4,6 +4,8 @@ import {
   Image,
   InputGroup,
   FormControl,
+  DropdownButton,
+  Dropdown,
 } from "react-bootstrap";
 import PIX from "../../assets/imgs/icons/pix.svg";
 import styles from "./styles.module.scss";
@@ -29,9 +31,21 @@ const PaymentForm = () => {
               aria-label="Total value converted"
               aria-describedby="asset"
             />
-            <InputGroup.Text className={styles.labelCurrency} id="asset">
-              BTC
-            </InputGroup.Text>
+            <DropdownButton
+              variant="neutral"
+              title="BTC"
+              id={styles.asset_select}
+              align="end"
+              className={styles.labelCurrency}
+            >
+              <Dropdown.ItemText>Select an asset</Dropdown.ItemText>
+              <Dropdown.Item selected href="#">
+                BTC
+              </Dropdown.Item>
+              <Dropdown.Item href="#">ETH</Dropdown.Item>
+              <Dropdown.Item href="#">BNB</Dropdown.Item>
+              <Dropdown.Item href="#">SOL</Dropdown.Item>
+            </DropdownButton>
           </InputGroup>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formValue">

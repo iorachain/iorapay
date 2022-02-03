@@ -25,7 +25,21 @@ const Home = () => {
           </div>
         </Col>
         <Col className={styles.rightSection} xs={12} md={6}>
-          {isActive ? <Step2 /> : <Step1 />}
+          {/* {isActive ? <Step2 /> : <Step1 />} */}
+          <Step1 />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Step2 />
+        </Col>
+        <Col>
+          <Step3LeftContainer />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Step3RightContainer />
         </Col>
       </Row>
     </section>
