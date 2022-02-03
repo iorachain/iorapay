@@ -11,6 +11,7 @@ import { MetaMaskProvider } from "./hooks/useMetaMask";
 import "./style/global.scss";
 import theme from "./ioraTheme";
 import { ThemeProvider } from "@mui/material/styles";
+
 function getLibrary(provider: ExternalProvider | JsonRpcFetchFunc) {
   return new Web3Provider(provider);
 }

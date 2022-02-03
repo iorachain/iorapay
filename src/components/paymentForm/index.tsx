@@ -11,14 +11,14 @@ import PIX from "../../assets/imgs/icons/pix.svg";
 import styles from "./styles.module.scss";
 import Button from "@mui/material/Button";
 
-const PaymentForm = () => {
-  const PIXPayment = (
-    <span className={styles.buttonPix}>
-      <Image height={25} color="#59beac" src={PIX} alt="Pay with PIX" />
-      PAGAR COM PIX
-    </span>
-  );
+const PIXPayment = (
+  <span className={styles.buttonPix}>
+    <Image height={25} color="#59beac" src={PIX} alt="Pay with PIX" />
+    PAGAR COM PIX
+  </span>
+);
 
+const PaymentForm = () => {
   return (
     <Container>
       <Form id={styles.PaymentForm}>
