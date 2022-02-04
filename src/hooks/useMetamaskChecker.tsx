@@ -32,7 +32,7 @@ export default async function CheckMetamask() {
     }
   } else {
     // if no window.ethereum then MetaMask is not installed
-    alert(
+    console.log(
       "MetaMask is not installed. Please consider installing it: https://metamask.io/download.html"
     );
   }
