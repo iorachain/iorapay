@@ -11,8 +11,8 @@ const Home = () => {
 
   return (
     <section id={styles.PaymentFlow}>
-      <Row className={styles.paySection}>
-        <Col className={styles.leftSection} xs={12} md={6}>
+      <Row>
+        <Col className={styles.paySection}>
           <div className={styles.leftButtons}>
             <Outlet />
           </div>

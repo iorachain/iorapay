@@ -2,65 +2,13 @@
 
 #PaymentFlow {
   .paySection {
+    width: 80vh;
     min-height: 86vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @include xs {
-      flex-direction: column-reverse;
-    }
-
-    @include md {
-      flex-direction: column;
-    }
   }
 
-  .leftSection {
-    width: 80vh;
-    background-color: $light_gray;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-
-    @include xs {
-      height: 65vh;
-    }
-
-    @include md {
-      height: 75vh;
-    }
-  }
-
-  .leftForm {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    height: 40vh;
-
-    :first-child {
-      font-family: Manrope;
-      font-weight: 800;
-    }
-  }
-
-  .rightSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80vh;
-
-    @include xs {
-      height: 50vh;
-    }
-
-    @include md {
-      height: 75vh;
-    }
-  }
 
   .instructionsSection {
     display: flex;
@@ -130,20 +78,24 @@
     -webkit-font-smoothing: antialiased !important;
   }
 
-  .walletTite {
-    font-size: 16;
-    margin-bottom: 15px;
-
-    span {
-      font-weight: 800;
-      text-transform: uppercase;
-    }
+  .buyTitle {
+    font-family: Manrope;
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
   }
 
-  h3 {
-    font-family: Manrope;
-    font-size: 22px;
-    font-weight: 800;
+  .paymentSection {
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .finished {
+    display: flex;
+    flex-direction: column;
   }
 
   .inputForm {
@@ -187,9 +139,9 @@
     justify-content: center;
     border-radius: 0px 8px 8px 0;
     border: 0;
-    background: $white;
+    background: $navy;
     font-size: 12px;
-    color: $gray;
+    color: $white;
 
     button {
       font-size: 14px;
@@ -197,9 +149,10 @@
   }
 
   #asset_select {
-    color: $gray;
-    background: $white;
+    color: $white;
+    background: $navy;
     font-size: 12px;
+    width: 70px;
   }
 
   .inputCheck {

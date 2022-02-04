@@ -13,23 +13,31 @@ export const Finish = () => {
   );
 
   return (
-    <Container>
-      <Image src={WaitingForApproval} alt="Waiting for approval" />
-      <div className={styles.waitingSection}>
-        <div className={styles.supportTitle}>
-          Seu pagamento está sendo processado.
+    <>
+      <Container className={styles.paymentSection}>
+        <div className={styles.finished}>
+          <Image src={WaitingForApproval} alt="Waiting for approval" />
+          <div className={styles.waitingSection}>
+            <div className={styles.supportTitle}>
+              Seu pagamento está sendo processado.
+            </div>
+            <div className="mb-3">Isso pode demorar algumas horas.</div>
+          </div>
         </div>
-        <div className="mb-3">Isso pode demorar algumas horas.</div>
-        <Button
-          size="large"
-          variant="contained"
-          target="_blank"
-          href="https://discord.gg/qQaqEERWDd"
-        >
-          {DiscordCommunity}
-        </Button>
-      </div>
-    </Container>
+      </Container>
+      <Container>
+        <div className={styles.buttonSection}>
+          <Button
+            size="large"
+            variant="contained"
+            target="_blank"
+            href="https://discord.gg/qQaqEERWDd"
+          >
+            {DiscordCommunity}
+          </Button>
+        </div>
+      </Container>
+    </>
   );
 };
 
