@@ -10,12 +10,14 @@ const PixPayment = () => {
     <>
       <Container className={styles.paymentSection}>
         <div id={styles.PaymentForm}>
-          <Image height={180} src={QRCODE} alt="QR CODE Generated" />
-          <div className={styles.pixSection}>
-            <span>Academia do Planejamento Sistemas LTDA</span>
-            <span>
-              <b>CNPJ (CHAVE PIX): </b>36.518.505/0001-90
-            </span>
+          <div className="d-flex justify-content-center aligm-items-center flex-column">
+            <Image height={"auto"} src={QRCODE} alt="QR CODE Generated" />
+            <div className={styles.pixSection}>
+              <span>Academia do Planejamento Sistemas LTDA</span>
+              <span>
+                <b>CNPJ (CHAVE PIX): </b>36.518.505/0001-90
+              </span>
+            </div>
           </div>
         </div>
       </Container>
