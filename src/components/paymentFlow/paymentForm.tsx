@@ -10,6 +10,10 @@ import {
 import PIX from "../../assets/imgs/icons/pix.svg";
 import styles from "./styles.module.scss";
 import Button from "@mui/material/Button";
+import BinanceServices from "../../services/binance.services";
+import { Link } from "react-router-dom";
+import Instructions from "./instructions";
+import useMetaMask from "hooks/useMetaMask";
 
 const PIXPayment = (
   <span className={styles.buttonPix}>
@@ -18,13 +22,22 @@ const PIXPayment = (
   </span>
 );
 
+async function getPrices(symbol: string) {
+  return BinanceServices.get(symbol);
+}
+
 const PaymentForm = () => {
-  return (
+  const { isActive } = useMetaMask();
+  getPrices("BTCBRL").then((result) => console.log(result));
+
+  return !isActive ? (
+    <Instructions />
+  ) : (
     <Container>
       <Form id={styles.PaymentForm}>
-        <h3 className="mt-3">BUY CRYPTOS</h3>
+        <h3 className="mt-3 text-center">COMPRAR CRIPTOS</h3>
         <Form.Group className="mt-3 mb-3" controlId="formCurrency">
-          <Form.Label className={styles.labelForm}>CURRENCY</Form.Label>
+          <Form.Label className={styles.labelForm}>MOEDA</Form.Label>
           <InputGroup className="mb-3">
             <FormControl
               className={styles.inputForm}
@@ -39,7 +52,7 @@ const PaymentForm = () => {
               align="end"
               className={styles.labelCurrency}
             >
-              <Dropdown.ItemText>Select an asset</Dropdown.ItemText>
+              <Dropdown.ItemText>Selecione a criptomoeda</Dropdown.ItemText>
               <Dropdown.Item selected href="#">
                 BTC
               </Dropdown.Item>
@@ -50,7 +63,7 @@ const PaymentForm = () => {
           </InputGroup>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formValue">
-          <Form.Label className={styles.labelForm}>VALUE</Form.Label>
+          <Form.Label className={styles.labelForm}>VALOR</Form.Label>
           <InputGroup className="mb-3">
             <FormControl
               className={styles.inputForm}
@@ -70,7 +83,7 @@ const PaymentForm = () => {
           </Form.Select>
         </Form.Group>
         <div className={styles.buttonSection}>
-          <Button variant="contained" size="large">
+          <Button component={Link} variant="contained" size="large" to="/step2">
             {PIXPayment}
           </Button>
         </div>

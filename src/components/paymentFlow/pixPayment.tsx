@@ -2,10 +2,11 @@ import styles from "./styles.module.scss";
 import Button from "@mui/material/Button";
 import QRCODE from "../../assets/imgs/qrcode.png";
 import { Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const step2 = () => {
+const PixPayment = () => {
   return (
-    <div className={styles.walletConnect}>
+    <div className={styles.instructionsSection}>
       <Image height={180} src={QRCODE} alt="QR CODE Generated" />
       <div className={styles.pixSection}>
         <span>Academia do Planejamento Sistemas LTDA</span>
@@ -14,7 +15,7 @@ const step2 = () => {
         </span>
       </div>
       <div className="mt-3">
-        <Button variant="contained" size="large">
+        <Button component={Link} to="/finish" variant="contained" size="large">
           JÁ REALIZEI O PAGAMENTO
         </Button>
       </div>
@@ -22,4 +23,4 @@ const step2 = () => {
   );
 };
 
-export default step2;
+export default PixPayment;

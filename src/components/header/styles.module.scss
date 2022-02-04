@@ -1,4 +1,4 @@
-@import url(../../style/global.scss);
+@import "../../style/global.scss";
 
 #Header {
   .navbar {
@@ -16,5 +16,9 @@
   .navItem {
     font-size: 12px;
     margin-right: 25px;
+  }
+
+  .navbarBrand a {
+    color: $black;
   }
 }

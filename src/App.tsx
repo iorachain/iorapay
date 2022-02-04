@@ -1,6 +1,9 @@
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Home from "./layouts/home";
 import PaymentFlow from "./components/paymentFlow";
+import PaymentForm from "./components/paymentFlow/paymentForm";
+import PIXPayment from "./components/paymentFlow/pixPayment";
+import FinishedPayment from "./components/paymentFlow/finish";
 import { Web3ReactProvider } from "@web3-react/core";
 import {
   ExternalProvider,
@@ -24,7 +27,11 @@ function App() {
           <MemoryRouter>
             <Routes>
               <Route element={<Home />}>
-                <Route path="/" element={<PaymentFlow />} />
+                <Route element={<PaymentFlow />}>
+                  <Route path="/" element={<PaymentForm />} />
+                  <Route path="/step2" element={<PIXPayment />} />
+                  <Route path="/finish" element={<FinishedPayment />} />
+                </Route>
               </Route>
             </Routes>
           </MemoryRouter>

@@ -3,6 +3,7 @@ import { Image, Navbar } from "react-bootstrap";
 import IoraWalletLogo from "../../assets/imgs/logo.svg";
 import Button from "@mui/material/Button";
 import useMetaMask from "hooks/useMetaMask";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { connect, account, isActive } = useMetaMask();
@@ -13,12 +14,14 @@ const Header = () => {
   return (
     <section id={styles.Header}>
       <Navbar className={styles.navbar}>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           <div className={styles.navbarBrand}>
-            <Image height={25} src={IoraWalletLogo} alt="" />{" "}
-            <span>
-              <b>iora</b>wallet
-            </span>
+            <Link to="/">
+              <Image height={25} src={IoraWalletLogo} alt="" />{" "}
+              <span>
+                <b>iora</b>wallet
+              </span>
+            </Link>
           </div>
         </Navbar.Brand>
         <Navbar.Collapse className="d-flex justify-content-end align-items-center pt-2">
