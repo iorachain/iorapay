@@ -10,8 +10,13 @@ const PixPayment = () => {
     <>
       <Container className={styles.paymentSection}>
         <div id={styles.PaymentForm}>
-          <div className="d-flex justify-content-center aligm-items-center flex-column">
-            <Image height={"auto"} src={QRCODE} alt="QR CODE Generated" />
+          <div className="d-flex justify-content-center align-items-center flex-column text-center">
+            <Image
+              height={"auto"}
+              width={200}
+              src={QRCODE}
+              alt="QR CODE Generated"
+            />
             <div className={styles.pixSection}>
               <span>Academia do Planejamento Sistemas LTDA</span>
               <span>
