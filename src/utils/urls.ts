@@ -1,6 +1,5 @@
 export const URLS = {
-  BINANCE_ENDPOINT:
-    "http://cors-anywhere.herokuapp.com/https://api.binance.com",
+  BINANCE_ENDPOINT: "https://api.binance.com",
   BINANCE_APIKEY:
     "uB4Z2uah4bwWVr8eykwcEjch00DVHquankHLNprMsN09JecEYokZp1dURjhTlxH3",
   BINANCE_SECRET_KEY:
