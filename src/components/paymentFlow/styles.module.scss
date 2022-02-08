@@ -2,13 +2,20 @@
 
 #PaymentFlow {
   .paySection {
-    width: 80vh;
+    width: 70vh;
     min-height: 86vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   }
 
+  .dataSection {
+    width: 70vh;
+    min-height: 86vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
   .instructionsSection {
     display: flex;
@@ -85,14 +92,6 @@
     text-align: center;
   }
 
-  .paymentSection {
-    height: 65vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-  }
-
   .finished {
     display: flex;
     flex-direction: column;
@@ -105,18 +104,19 @@
     border: 0;
 
     @include xs {
-      width: 200px;
+      width: 30vh;
     }
 
     @include md {
-      width: 325px;
+      width: 30vh;
     }
   }
 
   .inputSelect {
     height: 49px;
-    width: 100%;
+    width: 42vh;
     font-size: 12px;
+    border: 0;
   }
 
   .inputSelectToggle {
@@ -135,13 +135,13 @@
 
   .labelCurrency {
     width: 70px;
-    height: 49px;
+    height: 48px;
     justify-content: center;
     border-radius: 0px 8px 8px 0;
     border: 0;
-    background: $navy;
+    background: $white;
     font-size: 12px;
-    color: $white;
+    color: $gray_2;
 
     button {
       font-size: 14px;
@@ -149,8 +149,8 @@
   }
 
   #asset_select {
-    color: $white;
-    background: $navy;
+    color: $gray_2;
+    background: $white;
     font-size: 12px;
     width: 70px;
   }
@@ -170,25 +170,51 @@
     }
   }
 
-  .buttonSection {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    a {
-      color: $white;
-    }
-  }
-
   .buttonPix {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $black;
 
     :first-child {
       margin-right: 10px;
     }
   }
+}
 
+#PaymentForm {
+  width: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#MetamaskIntegration {
+  width: 70vh;
+  
+  .metamaskSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 50vh;
+  }
+}
+
+#SwitchOption {
+  padding-bottom: 20px;
+
+  .buy {
+    background-color: $green;
+    border-radius: 8px 0px 0px 8px;
+    padding: 10px 30px;
+    color: $white;
+  }
+  .sell {
+    background-color: $white;
+    padding: 10px 30px;
+    border-radius: 0px 8px 8px 0px;
+  }
 }

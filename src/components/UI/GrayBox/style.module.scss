@@ -1,0 +1,15 @@
+@import "../../../style/global.scss";
+
+#GrayBox {
+  .paymentSection {
+    height: 70vh;
+    display: flex;
+    min-width: 50vh;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    background: $grayLight;
+    border-radius: 8px 8px 0px 0px;
+    padding: 5px 0;
+  }
+}

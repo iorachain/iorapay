@@ -1,0 +1,14 @@
+@import "../../../style/global.scss";
+
+#WhiteBox {
+  .paymentSection {
+    height: 70vh;
+    display: flex;
+    min-width: 50vh;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    border-radius: 8px 8px 0px 0px;
+    padding: 5px 0;
+  }
+}

@@ -26,17 +26,10 @@ const PixPayment = () => {
           </div>
         </div>
       </Container>
-      <Container>
-        <div className={styles.buttonSection}>
-          <Button
-            component={Link}
-            to="/finish"
-            variant="contained"
-            size="large"
-          >
-            JÁ REALIZEI O PAGAMENTO
-          </Button>
-        </div>
+      <Container className={styles.buttonSection}>
+        <Button component={Link} to="/finish" variant="contained" size="large">
+          JÁ REALIZEI O PAGAMENTO
+        </Button>
       </Container>
     </>
   );
