@@ -1,19 +1,18 @@
 @import "../../../style/global.scss";
 
 #GrayButtonArea {
-    .buttonSection {
-        background: $grayLight;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0px 0px 8px 8px;
-        padding-bottom: 25px;
+  .buttonSection {
+    background: $grayLight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 8px 8px;
+    padding-bottom: 25px;
 
-        a {
-          color: $black;
-          box-shadow: none;
-          font-size: 12px;
-        }
-      }
+    a {
+      color: $black;
+      box-shadow: none;
+      font-size: 12px;
+    }
   }
-  
+}
