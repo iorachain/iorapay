@@ -28,4 +28,18 @@
       margin-left: 5px;
     }
   }
+
+  .rightOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    :first-child {
+      margin-right: 10px;
+    }
+
+    button {
+      color: $white;
+    }
+  }
 }

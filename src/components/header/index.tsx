@@ -6,7 +6,7 @@ import useMetaMask from "hooks/useMetaMask";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const { connect, account, isActive } = useMetaMask();
+  const { disconnect, account, isActive } = useMetaMask();
   const shortAddress =
     isActive &&
     account.substring(0, 4) + "..." + account.substring(account.length - 4);
@@ -19,21 +19,19 @@ const Header = () => {
             <Link to="/">
               <Image height={30} src={IoraWalletLogo} alt="Iora logo" />
               <span>
-                <b>iora</b>wallet
+                <b>iora</b>pay
               </span>
             </Link>
           </div>
         </Navbar.Brand>
         <Navbar.Collapse className="d-flex justify-content-end align-items-center pt-2">
-          {isActive ? (
-            <span>
-              <b>Wallet: </b>
-              {shortAddress}
+          {isActive && (
+            <span className={styles.rightOptions}>
+              <span>{shortAddress}</span>
+              <Button size="small" variant="contained" onClick={disconnect}>
+                Disconnect
+              </Button>
             </span>
-          ) : (
-            <Button size="small" variant="contained" onClick={connect}>
-              Connect Metamask
-            </Button>
           )}
         </Navbar.Collapse>
       </Navbar>

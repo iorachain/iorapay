@@ -1,38 +1,27 @@
 import styles from "./styles.module.scss";
-import ReactPlayer from "react-player";
-import { Container } from "react-bootstrap";
-import Button from "@mui/material/Button";
+import { Container, Image } from "react-bootstrap";
+import NoMetamask from "../../assets/imgs/nometamask.png";
+import GrayBox from "../UI/GrayBox";
 
 const Instructions = () => {
+  const InstructionSection = () => {
+    return (
+      <Container className={styles.instructionsSection}>
+        <span>
+          You need to connect to your Metamask wallet to use iora services
+        </span>
+        <Image
+          width={"100%"}
+          src={NoMetamask}
+          alt="You don't have metamask installed."
+        />
+      </Container>
+    );
+  };
+
   return (
     <>
-      <Container className={styles.paymentSection}>
-        <div className={styles.instructionsSection}>
-          <div className="mt-3">
-            Você precisa instalar Metamask <br />
-            para usar os serviços da IoraWallet
-          </div>
-          <div className="mt-3">
-            <ReactPlayer
-              width="460px"
-              height="330px"
-              url="https://www.youtube.com/watch?v=cSBp71amDZo"
-            />
-          </div>
-        </div>
-      </Container>
-      <Container>
-        <div className={styles.buttonSection}>
-          <Button
-            size="large"
-            variant="contained"
-            target="_blank"
-            href="https://metamask.io/download.html"
-          >
-            Download Metamask
-          </Button>
-        </div>
-      </Container>
+      <GrayBox childComp={<InstructionSection />} />
     </>
   );
 };

@@ -212,14 +212,57 @@
 }
 
 #MetamaskIntegration {
-  width: 70vh;
 
   .metamaskSection {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 50vh;
+    min-height: 60vh;
+
+    @include xs {
+      width: 100vh;
+      min-height: unset;
+      background-color: $grayLight;
+      padding-bottom: 5vh;
+    }
+
+    @include md {
+      width: 50vh;
+    }
+  }
+
+  .metaMaskButton {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    button {
+      color: $white;
+      font-weight: 800;
+    }
+
+    :first-child {
+      margin-top: 20px;
+    }
+  }
+
+  .metamaskTitle {
+    margin-top: 40px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .downloadMetamask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    button {
+      color: $green;
+    }
   }
 
   @include xs {
