@@ -5,12 +5,7 @@ import Button from "@mui/material/Button";
 import useMetaMaskChecker from "hooks/useMetamaskChecker";
 import { useEffect } from "react";
 import useMetaMask from "hooks/useMetaMask";
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile,
-} from "react-device-detect";
+import { isBrowser } from "react-device-detect";
 
 const MetamaskIntegration = () => {
   const { connect, isActive } = useMetaMask();

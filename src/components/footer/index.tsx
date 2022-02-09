@@ -4,7 +4,7 @@ import BrazilFlag from "../../assets/imgs/icons/brazil.png";
 
 const Footer = () => {
   return (
-    <footer id={styles.Footer}>
+    <div id={styles.Footer}>
       <div className={styles.leftFooter}>
         <Image height={20} src={BrazilFlag} alt="Brasil" />
         <span>Brasil (Português)</span>
@@ -13,7 +13,7 @@ const Footer = () => {
         <span>Privacidade</span>
         <span>Termos</span>
       </div>
-    </footer>
+    </div>
   );
 };
 
