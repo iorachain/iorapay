@@ -71,8 +71,8 @@ const PaymentForm = () => {
   const SwitchOptions = () => {
     return (
       <div id={styles.SwitchOption}>
-        <span className={styles.buy}>Comprar</span>
-        <span className={styles.sell}>Vender</span>
+        <span className={styles.active}>Comprar</span>
+        <span className={styles.inative}>Vender</span>
       </div>
     );
   };

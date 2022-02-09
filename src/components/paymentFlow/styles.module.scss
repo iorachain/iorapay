@@ -205,16 +205,18 @@
 
 #SwitchOption {
   padding-bottom: 20px;
+  cursor: pointer;
 
-  .buy {
+  .active {
+    padding: 10px 30px;
     background-color: $green;
     border-radius: 8px 0px 0px 8px;
-    padding: 10px 30px;
     color: $white;
   }
-  .sell {
-    background-color: $white;
+
+  .inative {
     padding: 10px 30px;
+    background-color: $white;
     border-radius: 0px 8px 8px 0px;
   }
 }
