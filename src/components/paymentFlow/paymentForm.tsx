@@ -1,3 +1,4 @@
+import React from "react";
 import { Form, Image, InputGroup, FormControl } from "react-bootstrap";
 import PIX from "../../assets/imgs/icons/pix.svg";
 import styles from "./styles.module.scss";
@@ -66,8 +67,8 @@ const PaymentForm = () => {
   const SwitchOptions = () => {
     return (
       <div id={styles.SwitchOption}>
-        <span className={styles.active}>Comprar</span>
-        <span className={styles.inative}>Vender</span>
+        <span className={styles.left}>Comprar</span>
+        <span className={styles.right}>Vender</span>
       </div>
     );
   };

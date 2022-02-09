@@ -7,6 +7,13 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    @include xs {
+      min-height: unset;
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .dataSection {
@@ -15,6 +22,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    @include xs {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: unset;
+    }
   }
 
   .instructionsSection {
@@ -118,6 +133,10 @@
     width: 42vh;
     font-size: 12px;
     border: 0;
+
+    @include xs {
+      width: 38vh;
+    }
   }
 
   .inputSelectToggle {
@@ -202,22 +221,39 @@
     align-items: center;
     min-height: 50vh;
   }
+
+  @include xs {
+    width: unset;
+  }
 }
 
 #SwitchOption {
   padding-bottom: 20px;
   cursor: pointer;
 
-  .active {
+  .left {
     padding: 10px 30px;
     background-color: $green;
     border-radius: 8px 0px 0px 8px;
     color: $white;
+
+    &__open {
+      background-color: $white;
+      border-radius: 8px 0px 0px 8px;
+      padding: 10px 30px;
+    }
   }
 
-  .inative {
+  .right {
     padding: 10px 30px;
     background-color: $white;
     border-radius: 0px 8px 8px 0px;
+
+    &__open {
+      padding: 10px 30px;
+      background-color: $green;
+      color: $white;
+      border-radius: 0px 8px 8px 0px;
+    }
   }
 }

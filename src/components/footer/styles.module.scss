@@ -11,14 +11,6 @@
   align-items: center;
   font-size: 12px;
 
-  @include xs {
-    position: relative;
-  }
-
-  @include md {
-    position: absolute;
-  }
-
   .rightFooter {
     width: 200px;
     display: flex;

@@ -1,9 +1,8 @@
 import styles from "./styles.module.scss";
-import { Container, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import WaitingForApproval from "../../assets/imgs/waiting.svg";
 import DiscordIcon from "../../assets/imgs/icons/discord.svg";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 import GrayBox from "../UI/GrayBox";
 import GrayButtonArea from "../UI/GrayButtonArea";
 
