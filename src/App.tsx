@@ -23,13 +23,15 @@ const FinishedPayment = React.lazy(
   () => import("./components/paymentFlow/finish")
 );
 
+const Loading = React.lazy(() => import("./components/loading"));
+
 function getLibrary(provider: ExternalProvider | JsonRpcFetchFunc) {
   return new Web3Provider(provider);
 }
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <Web3ReactProvider getLibrary={getLibrary}>
         <MetaMaskProvider>
           <ThemeProvider theme={theme}>
