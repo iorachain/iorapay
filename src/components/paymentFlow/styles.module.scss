@@ -78,11 +78,12 @@
 
   .supportTitle {
     margin-top: 40px;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 800;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
+  }
+
+  .supportSubTitle {
+    font-size: 12px;
   }
 
   .buyTitle {

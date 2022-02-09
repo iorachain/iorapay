@@ -10,9 +10,16 @@
     padding-bottom: 25px;
 
     a {
+      background-color: $white;
       color: $black;
       box-shadow: none;
       font-size: 12px;
+    }
+
+
+    a :hover {
+      color: $white;
+      background-color: $green;
     }
   }
 }

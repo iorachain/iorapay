@@ -10,6 +10,7 @@ import { MetaMaskProvider } from "./hooks/useMetaMask";
 import "./style/global.scss";
 import theme from "./ioraTheme";
 import { ThemeProvider } from "@mui/material/styles";
+import Loading from "./components/loading";
 
 const Home = React.lazy(() => import("./layouts/home"));
 const PaymentFlow = React.lazy(() => import("./components/paymentFlow"));
@@ -23,33 +24,37 @@ const FinishedPayment = React.lazy(
   () => import("./components/paymentFlow/finish")
 );
 
-const Loading = React.lazy(() => import("./components/loading"));
-
 function getLibrary(provider: ExternalProvider | JsonRpcFetchFunc) {
   return new Web3Provider(provider);
 }
 
+function Main() {
+  return (
+    <ThemeProvider theme={theme}>
+      <MemoryRouter>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route element={<Home />}>
+              <Route element={<PaymentFlow />}>
+                <Route path="/" element={<PaymentForm />} />
+                <Route path="/step2" element={<PIXPayment />} />
+                <Route path="/finish" element={<FinishedPayment />} />
+              </Route>
+            </Route>
+          </Routes>
+        </Suspense>
+      </MemoryRouter>
+    </ThemeProvider>
+  );
+}
+
 function App() {
   return (
-    <Suspense fallback={<Loading />}>
-      <Web3ReactProvider getLibrary={getLibrary}>
-        <MetaMaskProvider>
-          <ThemeProvider theme={theme}>
-            <MemoryRouter>
-              <Routes>
-                <Route element={<Home />}>
-                  <Route element={<PaymentFlow />}>
-                    <Route path="/" element={<PaymentForm />} />
-                    <Route path="/step2" element={<PIXPayment />} />
-                    <Route path="/finish" element={<FinishedPayment />} />
-                  </Route>
-                </Route>
-              </Routes>
-            </MemoryRouter>
-          </ThemeProvider>
-        </MetaMaskProvider>
-      </Web3ReactProvider>
-    </Suspense>
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <MetaMaskProvider>
+        <Main />
+      </MetaMaskProvider>
+    </Web3ReactProvider>
   );
 }
 

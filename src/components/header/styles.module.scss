@@ -20,5 +20,12 @@
 
   .navbarBrand a {
     color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    :first-child {
+      margin-left: 5px;
+    }
   }
 }

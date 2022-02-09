@@ -17,7 +17,7 @@ const Header = () => {
         <Navbar.Brand>
           <div className={styles.navbarBrand}>
             <Link to="/">
-              <Image height={25} src={IoraWalletLogo} alt="" />{" "}
+              <Image height={30} src={IoraWalletLogo} alt="Iora logo" />
               <span>
                 <b>iora</b>wallet
               </span>

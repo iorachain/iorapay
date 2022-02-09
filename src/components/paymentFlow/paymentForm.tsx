@@ -54,11 +54,6 @@ const PaymentForm = () => {
       <Button
         component={Link}
         variant="contained"
-        sx={{
-          width: 200,
-          backgroundColor: "secondary.main",
-          color: "secondary.main",
-        }}
         size="large"
         to="/step2"
         startIcon={<Image height={25} src={PIX} alt="Pay with PIX" />}

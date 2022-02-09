@@ -1,4 +1,4 @@
-import animationData from "./loadingBubbles.json";
+import animationData from "./loading.json";
 import Lottie from "react-lottie";
 import styles from "./style.module.scss";
 
@@ -8,9 +8,10 @@ const Loading = () => {
     autoplay: true,
     animationData,
   };
+
   return (
     <section id={styles.Loading}>
-      <Lottie options={defaultOptions} height={200} width={200} />
+      <Lottie options={defaultOptions} width={300} />
     </section>
   );
 };
