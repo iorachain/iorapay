@@ -21,7 +21,7 @@
     min-height: 86vh;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 
     @include xs {
       width: 100%;
@@ -215,9 +215,10 @@
   .metamaskSection {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     min-height: 40vh;
+    margin-top: 5vh;
 
     @include xs {
       width: 100vh;
@@ -293,5 +294,38 @@
     background-color: $green;
     color: $white;
     border-radius: 0px 8px 8px 0px;
+  }
+}
+
+#SelectAsset {
+  display: flex;
+  flex-direction: column;
+
+  .selectAssetTitle {
+    font-family: Manrope;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .selectItems {
+    margin-top: 5vh;
+  }
+  
+  .selectItemsSpace {
+    margin: 20px 5px;
+  }
+
+  .assets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin-top: 5px;
+      font-size: 12px;
+    }
   }
 }

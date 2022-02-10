@@ -6,6 +6,7 @@ import useMetaMaskChecker from "hooks/useMetamaskChecker";
 import { useEffect } from "react";
 import useMetaMask from "hooks/useMetaMask";
 import { isBrowser } from "react-device-detect";
+import SelectAsset from "./selectAsset";
 
 const MetamaskIntegration = () => {
   const { connect, isActive } = useMetaMask();
@@ -38,10 +39,7 @@ const MetamaskIntegration = () => {
   return (
     <section id={styles.MetamaskIntegration}>
       <Container className={styles.metamaskSection}>
-        {/* {isBrowser && (
-          <Image width={150} src={MetaMask} alt="Connect Metamask" />
-        )} */}
-        {!isActive && <MetaMaskButton />}
+        {isActive ? <SelectAsset /> : <MetaMaskButton />}
       </Container>
     </section>
   );
