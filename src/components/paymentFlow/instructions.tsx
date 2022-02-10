@@ -8,12 +8,12 @@ const Instructions = () => {
     return (
       <Container className={styles.instructionsSection}>
         <span>
-          You need to connect to your Metamask wallet to use iora services
+          Você precisa se conectar usando Metamask para usar o Iora Pay
         </span>
         <Image
           width={"100%"}
           src={NoMetamask}
-          alt="You don't have metamask installed."
+          alt=" Você precisa se conectar usando Metamask para usar o Iora Pay"
         />
       </Container>
     );

@@ -24,12 +24,14 @@ const MetamaskIntegration = () => {
           )}
         </Container>
         <Button variant="contained" size="large" onClick={connect}>
-          Connect Metamask
+          Conectar Metamask
         </Button>
-        <div className={styles.metamaskTitle}>Don’t have metamask yet?</div>
+        <div className={styles.metamaskTitle}>
+          Não possui Metamask instalado?
+        </div>
         <div className={styles.downloadMetamask}>
           <Button variant="text" size="small">
-            Install Metamask
+            Instalar Metamask
           </Button>
         </div>
       </div>
