@@ -29,6 +29,17 @@
     }
   }
 
+  .navbarCollapse {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+
+    @include xs {
+      margin: 0;
+    }
+  }
+
   .rightOptions {
     display: flex;
     justify-content: center;

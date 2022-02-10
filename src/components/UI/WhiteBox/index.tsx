@@ -9,7 +9,7 @@ interface ParentCompProps {
 const WhiteBox: React.FC<ParentCompProps> = ({ childComp }) => {
   return (
     <section id={styles.GrayBox}>
-      <Container className={styles.paymentSection}>{childComp}</Container>
+      <Container className={styles.GrayBoxSection}>{childComp}</Container>
     </section>
   );
 };

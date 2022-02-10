@@ -212,13 +212,12 @@
 }
 
 #MetamaskIntegration {
-
   .metamaskSection {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 60vh;
+    min-height: 40vh;
 
     @include xs {
       width: 100vh;
@@ -240,10 +239,6 @@
     button {
       color: $white;
       font-weight: 800;
-    }
-
-    :first-child {
-      margin-top: 20px;
     }
   }
 
@@ -279,24 +274,24 @@
     background-color: $green;
     border-radius: 8px 0px 0px 8px;
     color: $white;
+  }
 
-    &__open {
-      background-color: $white;
-      border-radius: 8px 0px 0px 8px;
-      padding: 10px 30px;
-    }
+  .left__open {
+    background-color: $white;
+    border-radius: 8px 0px 0px 8px;
+    padding: 10px 30px;
   }
 
   .right {
     padding: 10px 30px;
     background-color: $white;
     border-radius: 0px 8px 8px 0px;
+  }
 
-    &__open {
-      padding: 10px 30px;
-      background-color: $green;
-      color: $white;
-      border-radius: 0px 8px 8px 0px;
-    }
+  .right__open {
+    padding: 10px 30px;
+    background-color: $green;
+    color: $white;
+    border-radius: 0px 8px 8px 0px;
   }
 }

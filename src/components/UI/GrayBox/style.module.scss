@@ -3,7 +3,7 @@
 #GrayBox {
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 
   .paymentSection {
     height: 70vh;
@@ -18,10 +18,9 @@
     padding: 5px 0;
 
     @include xs {
-      width: unset;
+      width: 40vh;
       padding: 0;
       height: 50vh;
     }
-  
   }
 }

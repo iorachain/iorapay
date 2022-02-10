@@ -12,9 +12,7 @@ const Layout = () => {
           <Outlet />
         </div>
       </section>
-      <section id={styles.Footer}>
-        <Footer />
-      </section>
+      <Footer />
     </div>
   );
 };

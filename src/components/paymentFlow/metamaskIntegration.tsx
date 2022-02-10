@@ -17,6 +17,11 @@ const MetamaskIntegration = () => {
   const MetaMaskButton = () => {
     return (
       <div className={styles.metaMaskButton}>
+        <Container className={styles.metamaskSection}>
+          {isBrowser && (
+            <Image width={150} src={MetaMask} alt="Connect Metamask" />
+          )}
+        </Container>
         <Button variant="contained" size="large" onClick={connect}>
           Connect Metamask
         </Button>
@@ -33,9 +38,9 @@ const MetamaskIntegration = () => {
   return (
     <section id={styles.MetamaskIntegration}>
       <Container className={styles.metamaskSection}>
-        {isBrowser && (
+        {/* {isBrowser && (
           <Image width={150} src={MetaMask} alt="Connect Metamask" />
-        )}
+        )} */}
         {!isActive && <MetaMaskButton />}
       </Container>
     </section>

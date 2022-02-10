@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEvent, useCallback, useEffect } from "react";
 import { Form, Image, InputGroup, FormControl } from "react-bootstrap";
 import PIX from "../../assets/imgs/icons/pix.svg";
 import styles from "./styles.module.scss";
@@ -65,10 +65,29 @@ const PaymentForm = () => {
   };
 
   const SwitchOptions = () => {
+    const leftRef = React.useRef<HTMLDivElement>(null);
+    const rightRef = React.useRef<HTMLDivElement>(null);
+
+    const ToogleFunction = (e: MouseEvent) => {
+      console.log(e.currentTarget.innerHTML);
+
+      if (e.currentTarget.innerHTML == "Comprar") {
+        leftRef.current.className = styles.left__open;
+        rightRef.current.className = styles.right;
+      } else if (e.currentTarget.innerHTML == "Vender") {
+        rightRef.current.className = styles.right__open;
+        leftRef.current.className = styles.left;
+      }
+    };
+
     return (
       <div id={styles.SwitchOption}>
-        <span className={styles.left}>Comprar</span>
-        <span className={styles.right}>Vender</span>
+        <span ref={leftRef} className={styles.left} onClick={ToogleFunction}>
+          Comprar
+        </span>
+        <span ref={rightRef} className={styles.right} onClick={ToogleFunction}>
+          Vender
+        </span>
       </div>
     );
   };

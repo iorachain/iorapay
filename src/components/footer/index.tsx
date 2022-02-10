@@ -1,13 +1,15 @@
 import styles from "./styles.module.scss";
 import { Image } from "react-bootstrap";
-import BrazilFlag from "../../assets/imgs/icons/brazil.png";
+import IoraChain from "../../assets/imgs/iorachain.png";
 
 const Footer = () => {
   return (
     <div id={styles.Footer}>
       <div className={styles.leftFooter}>
-        <Image height={20} src={BrazilFlag} alt="Brasil" />
-        <span>Brasil (Português)</span>
+        <Image height={40} src={IoraChain} alt="Brasil" />
+        <span>
+          <b>Iora</b>Chain
+        </span>
       </div>
       <div className={styles.rightFooter}>
         <span>Privacidade</span>

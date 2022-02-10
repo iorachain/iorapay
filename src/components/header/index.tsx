@@ -4,6 +4,7 @@ import IoraWalletLogo from "../../assets/imgs/logo.svg";
 import Button from "@mui/material/Button";
 import useMetaMask from "hooks/useMetaMask";
 import { Link } from "react-router-dom";
+import { isBrowser } from "react-device-detect";
 
 const Header = () => {
   const { disconnect, account, isActive } = useMetaMask();
@@ -24,10 +25,10 @@ const Header = () => {
             </Link>
           </div>
         </Navbar.Brand>
-        <Navbar.Collapse className="d-flex justify-content-end align-items-center pt-2">
+        <Navbar.Collapse className={styles.navbarCollapse}>
           {isActive && (
             <span className={styles.rightOptions}>
-              <span>{shortAddress}</span>
+              {isBrowser && <span>{shortAddress}</span>}
               <Button size="small" variant="contained" onClick={disconnect}>
                 Disconnect
               </Button>
