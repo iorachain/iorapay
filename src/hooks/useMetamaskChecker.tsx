@@ -5,7 +5,7 @@ export default async function CheckMetamask() {
       // check if the chain to connect to is installed
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x4ad" }], // chainId must be in hexadecimal numbers
+        params: [{ chainId: "0x38" }], // chainId must be in hexadecimal numbers
       });
     } catch (error: any) {
       // This error code indicates that the chain has not been added to MetaMask
@@ -16,17 +16,15 @@ export default async function CheckMetamask() {
             method: "wallet_addEthereumChain",
             params: [
               {
-                chainId: "0x4ad",
-                rpcUrl: "https://dataseed.iorachain.com",
-                chainName: "Iora Chain",
+                chainId: "0x38",
+                chainName: "Binance Smart Chain",
                 nativeCurrency: {
-                  name: "IORA",
-                  symbol: "IORA",
+                  name: "Binance Coin",
+                  symbol: "BNB",
                   decimals: 18,
                 },
-                blockExplorerUrls: ["https://explorer.iorachain.com"],
-                iconUrls:
-                  "https://storageapi.fleek.co/d5db343a-0f9f-4dd4-bca1-b432ec3147fd-bucket/iorachain.png",
+                rpcUrls: ["https://bsc-dataseed.binance.org/"],
+                blockExplorerUrls: ["https://bscscan.com"],
               },
             ],
           });
