@@ -30,7 +30,7 @@ const Header = () => {
             <span className={styles.rightOptions}>
               {isBrowser && <span>{shortAddress}</span>}
               <Button size="small" variant="contained" onClick={disconnect}>
-                Disconnect
+                Desconectar
               </Button>
             </span>
           )}

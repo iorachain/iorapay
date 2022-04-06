@@ -11,7 +11,9 @@ const Home = () => {
     <section id={styles.PaymentFlow}>
       <Row>
         <Col className={styles.paySection}>
-          <Outlet />
+          <div>
+            <Outlet />
+          </div>
         </Col>
       </Row>
     </section>
