@@ -23,6 +23,7 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 ### `yarn prettier:fix`
+
 Fix all prettier tracked files and fix formater lines.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.

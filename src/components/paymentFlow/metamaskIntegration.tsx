@@ -1,15 +1,16 @@
 import MetaMask from "../../assets/imgs/metamask.svg";
-import { Image, Container } from "react-bootstrap";
+import { Image, Container, Row, Col } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import Button from "@mui/material/Button";
 import useMetaMaskChecker from "hooks/useMetamaskChecker";
 import { useEffect } from "react";
 import useMetaMask from "hooks/useMetaMask";
 import { isBrowser } from "react-device-detect";
-import SelectAsset from "./selectAsset";
+import NoMetamask from "../../assets/imgs/nometamask.png";
+import GrayBox from "../UI/GrayBox";
 
 const MetamaskIntegration = () => {
-  const { connect, isActive } = useMetaMask();
+  const { connect } = useMetaMask();
 
   useEffect(() => {
     useMetaMaskChecker();
@@ -38,10 +39,42 @@ const MetamaskIntegration = () => {
     );
   };
 
+  const Instructions = () => {
+    const InstructionSection = () => {
+      return (
+        <Container className={styles.instructionsSection}>
+          <span>
+            Você precisa se conectar usando Metamask para usar o Iora Pay
+          </span>
+          <Image
+            width={"100%"}
+            src={NoMetamask}
+            alt=" Você precisa se conectar usando Metamask para usar o Iora Pay"
+          />
+        </Container>
+      );
+    };
+
+    return <GrayBox childComp={<InstructionSection />} />;
+  };
+
   return (
     <section id={styles.MetamaskIntegration}>
       <Container className={styles.metamaskSection}>
-        {isActive ? <SelectAsset /> : <MetaMaskButton />}
+        <Row>
+          <Col className={styles.paySection}>
+            <div>
+              <MetaMaskButton />
+            </div>
+          </Col>
+          <Col className={styles.dataSection}>
+            <div>
+              <div>
+                <Instructions />
+              </div>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </section>
   );

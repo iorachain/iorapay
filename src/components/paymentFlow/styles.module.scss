@@ -2,10 +2,10 @@
 
 #PaymentFlow {
   .paySection {
-    width: 70vh;
+    // width: 70vh;
     min-height: 86vh;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 
     @include xs {
@@ -313,7 +313,7 @@
   .selectItems {
     margin-top: 5vh;
   }
-  
+
   .selectItemsSpace {
     margin: 20px 5px;
   }
