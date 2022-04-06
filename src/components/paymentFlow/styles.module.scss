@@ -2,7 +2,6 @@
 
 #PaymentFlow {
   .paySection {
-    // width: 70vh;
     min-height: 86vh;
     display: flex;
     justify-content: center;
@@ -39,6 +38,7 @@
     flex-direction: column;
     height: 50vh;
     text-align: center;
+    background: $gray_2;
 
     @include xs {
       height: 20vh;
@@ -118,6 +118,8 @@
     height: 48px;
     border-radius: 8px 0px 0px 8px;
     border: 0;
+    font-size: 12px;
+    width: 200px;
 
     @include xs {
       width: 30vh;
@@ -125,6 +127,23 @@
 
     @include md {
       width: 30vh;
+    }
+  }
+
+  .inputFormMail {
+    margin-top: 10x;
+    height: 48px;
+    border-radius: 8px 0px 0px 8px;
+    border: 0;
+    width: 270px;
+    font-size: 12px;
+
+    @include xs {
+      width: 50vh;
+    }
+
+    @include md {
+      width: 50vh;
     }
   }
 
@@ -232,6 +251,21 @@
     }
   }
 
+  .instSection {
+    min-height: 86vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $grayLight;
+
+    @include xs {
+      min-height: unset;
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
   .metaMaskButton {
     display: flex;
     justify-content: center;
@@ -257,6 +291,10 @@
     border-radius: 20px;
 
     button {
+      color: $green;
+    }
+
+    :hover {
       color: $green;
     }
   }

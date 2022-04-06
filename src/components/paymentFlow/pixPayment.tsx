@@ -5,6 +5,7 @@ import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import GrayBox from "../UI/GrayBox";
 import GrayButtonArea from "../UI/GrayButtonArea";
+import PIX from "../../assets/imgs/icons/pix.svg";
 
 const PixPayment = () => {
   const PixContainer = () => {
@@ -29,11 +30,7 @@ const PixPayment = () => {
   };
 
   const PaidButton = () => {
-    return (
-      <Button component={Link} variant="contained" size="large" to="/finish">
-        Já realizei o pagamento
-      </Button>
-    );
+    return <div>Aguardando pagamento...</div>;
   };
 
   return (

@@ -20,6 +20,8 @@ const PaymentForm = React.lazy(
 const PIXPayment = React.lazy(
   () => import("./components/paymentFlow/pixPayment")
 );
+const DataForm = React.lazy(() => import("./components/paymentFlow/dataForm"));
+const Review = React.lazy(() => import("./components/paymentFlow/review"));
 const FinishedPayment = React.lazy(
   () => import("./components/paymentFlow/finish")
 );
@@ -37,7 +39,9 @@ function Main() {
             <Route element={<Home />}>
               <Route element={<PaymentFlow />}>
                 <Route path="/" element={<PaymentForm />} />
-                <Route path="/step2" element={<PIXPayment />} />
+                <Route path="/step2" element={<DataForm />} />
+                <Route path="/step3" element={<Review />} />
+                <Route path="/step4" element={<PIXPayment />} />
                 <Route path="/finish" element={<FinishedPayment />} />
               </Route>
             </Route>

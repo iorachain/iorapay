@@ -19,19 +19,29 @@ const MetamaskIntegration = () => {
   const MetaMaskButton = () => {
     return (
       <div className={styles.metaMaskButton}>
-        <Container className={styles.metamaskSection}>
-          {isBrowser && (
-            <Image width={150} src={MetaMask} alt="Connect Metamask" />
-          )}
-        </Container>
-        <Button variant="contained" size="large" onClick={connect}>
-          Conectar Metamask
-        </Button>
+        <span>
+          Você precisa se conectar usando Metamask para usar o Iora Pay
+        </span>
+        <Image
+          width={400}
+          src={NoMetamask}
+          alt=" Você precisa se conectar usando Metamask para usar o Iora Pay"
+        />
+        <div className="d-flex justify-content-center mt-3">
+          <Button variant="contained" size="large" onClick={connect}>
+            Conectar Metamask
+          </Button>
+        </div>
         <div className={styles.metamaskTitle}>
           Não possui Metamask instalado?
         </div>
         <div className={styles.downloadMetamask}>
-          <Button variant="text" size="small">
+          <Button
+            variant="text"
+            size="small"
+            href="https://metamask.io"
+            startIcon={<Image height={25} src={MetaMask} alt="Metamask" />}
+          >
             Instalar Metamask
           </Button>
         </div>
@@ -39,39 +49,13 @@ const MetamaskIntegration = () => {
     );
   };
 
-  const Instructions = () => {
-    const InstructionSection = () => {
-      return (
-        <Container className={styles.instructionsSection}>
-          <span>
-            Você precisa se conectar usando Metamask para usar o Iora Pay
-          </span>
-          <Image
-            width={"100%"}
-            src={NoMetamask}
-            alt=" Você precisa se conectar usando Metamask para usar o Iora Pay"
-          />
-        </Container>
-      );
-    };
-
-    return <GrayBox childComp={<InstructionSection />} />;
-  };
-
   return (
     <section id={styles.MetamaskIntegration}>
       <Container className={styles.metamaskSection}>
         <Row>
-          <Col className={styles.paySection}>
-            <div>
-              <MetaMaskButton />
-            </div>
-          </Col>
           <Col className={styles.dataSection}>
-            <div>
-              <div>
-                <Instructions />
-              </div>
+            <div className="mb-4">
+              <MetaMaskButton />
             </div>
           </Col>
         </Row>
