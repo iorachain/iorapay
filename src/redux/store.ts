@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import userReducer from "./reducers/userReducers";
 import uiReducer from "./reducers/uiReducers";
+import orderReducer from "./reducers/orderReducers";
 
 const initialState = {};
 const middleware = [thunk];
@@ -17,6 +18,7 @@ declare global {
 const reducer = combineReducers({
   user: userReducer,
   UI: uiReducer,
+  order: orderReducer,
 });
 
 const store = createStore(

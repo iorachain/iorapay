@@ -7,6 +7,7 @@ import {
   LOADING_USER,
 } from "../types";
 import axios from "axios";
+
 export const loginUser = (userData: any, history: any) => (dispatch: any) => {
   dispatch({ type: LOADING_UI });
   axios
@@ -28,6 +29,7 @@ export const loginUser = (userData: any, history: any) => (dispatch: any) => {
       });
     });
 };
+
 //for fetching authenticated user information
 export const getUserData = () => (dispatch: any) => {
   dispatch({ type: LOADING_USER });
@@ -44,6 +46,7 @@ export const getUserData = () => (dispatch: any) => {
       console.log(err);
     });
 };
+
 export const logoutUser = () => (dispatch: any) => {
   localStorage.removeItem("token");
   delete axios.defaults.headers.common["Authorization"];

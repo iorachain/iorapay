@@ -1,12 +1,34 @@
-import React, { MouseEvent, useCallback, useEffect } from "react";
-import { Form, Image, InputGroup, FormControl } from "react-bootstrap";
+import React, { MouseEvent, useEffect } from "react";
+import { Form, InputGroup, FormControl } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import GrayBox from "../UI/GrayBox";
 import GrayButtonArea from "../UI/GrayButtonArea";
+import { connect } from "react-redux";
+import { getPrice } from "../../redux/actions/orderActions";
+import { TickerPrice } from "./types";
+import { truncate, toNumber, toString } from "lodash";
 
-const PaymentForm = () => {
+const PaymentForm = (props: any) => {
+  const { price } = props.order;
+  const priceOverFee = toNumber(price);
+  const pricePlusFee = priceOverFee * 1.052;
+  const priceConvertedToString = toString(pricePlusFee);
+
+  const shortPrice = truncate(priceConvertedToString, {
+    length: 4,
+    omission: "",
+  });
+
+  useEffect(() => {
+    props.getPrice("USDTBRL");
+    console.log(price);
+    return () => {
+      15;
+    };
+  }, []);
+
   const DataForm = () => {
     return (
       <Form className="m-4" id={styles.PaymentForm}>
@@ -21,7 +43,7 @@ const PaymentForm = () => {
               aria-describedby="fiat"
             />
             <InputGroup.Text className={styles.labelCurrency} id="fiat">
-              BUSD
+              USDT
             </InputGroup.Text>
           </InputGroup>
         </Form.Group>
@@ -30,7 +52,7 @@ const PaymentForm = () => {
           <InputGroup className="mb-3">
             <FormControl
               className={styles.inputForm}
-              placeholder="203.462,42"
+              placeholder={shortPrice}
               aria-label="Total value reais"
               aria-describedby="fiat"
             />
@@ -93,4 +115,12 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;
+const mapStateToProps = (state: any) => ({
+  order: state.order,
+});
+
+const mapActionsToProps = {
+  getPrice,
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(PaymentForm);

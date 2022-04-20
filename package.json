@@ -5,6 +5,7 @@
   "engines": {
     "node": "14.17.0"
   },
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -47,9 +48,9 @@
     "stylelint": "npx stylelint '**/*.scss'",
     "stylelint:fix": "npx stylelint --fix '**/*.scss'",
     "prettier:fix": "npx prettier --write .",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "npx react-scripts build",
+    "test": "npx react-scripts test",
+    "eject": "npx yarreact-scripts eject",
     "prepare": "husky install"
   },
   "devDependencies": {
