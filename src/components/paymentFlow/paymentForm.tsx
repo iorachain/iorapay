@@ -7,11 +7,11 @@ import GrayBox from "../UI/GrayBox";
 import GrayButtonArea from "../UI/GrayButtonArea";
 import { connect } from "react-redux";
 import { getPrice } from "../../redux/actions/orderActions";
-import { TickerPrice } from "./types";
+import { OrderState } from "./types";
 import { truncate, toNumber, toString } from "lodash";
 
-const PaymentForm = (props: any) => {
-  const { price } = props.order;
+const PaymentForm = ({ getPrice, order }: OrderState) => {
+  const { price } = order;
   const priceOverFee = toNumber(price);
   const pricePlusFee = priceOverFee * 1.052;
   const priceConvertedToString = toString(pricePlusFee);
@@ -22,17 +22,13 @@ const PaymentForm = (props: any) => {
   });
 
   useEffect(() => {
-    props.getPrice("USDTBRL");
-    console.log(price);
-    return () => {
-      15;
-    };
+    getPrice("USDTBRL");
   }, []);
 
   const DataForm = () => {
     return (
       <Form className="m-4" id={styles.PaymentForm}>
-        {/* <SwitchOptions /> */}
+        <SwitchOptions />
         <Form.Group className="mb-3" controlId="formCrypto">
           <Form.Label className={styles.labelForm}>MOEDA</Form.Label>
           <InputGroup className="mb-3">
@@ -115,7 +111,7 @@ const PaymentForm = (props: any) => {
   );
 };
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: OrderState) => ({
   order: state.order,
 });
 

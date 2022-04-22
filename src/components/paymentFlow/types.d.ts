@@ -1,4 +1,4 @@
-interface Order {
+export interface Order {
   errors: string;
   fees: number;
   from: string;
@@ -12,4 +12,9 @@ interface Order {
 
 export interface TickerPrice {
   order: Order;
+}
+
+export interface OrderState {
+  order: Order;
+  getPrice: (string) => void;
 }
