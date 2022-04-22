@@ -1,4 +1,9 @@
-import React, { MouseEvent, useEffect } from "react";
+import React, {
+  FormEventHandler,
+  MouseEvent,
+  useEffect,
+  useState,
+} from "react";
 import { Form, InputGroup, FormControl } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import Button from "@mui/material/Button";
@@ -7,19 +12,23 @@ import GrayBox from "../UI/GrayBox";
 import GrayButtonArea from "../UI/GrayButtonArea";
 import { connect } from "react-redux";
 import { getPrice } from "../../redux/actions/orderActions";
-import { OrderState } from "./types";
-import { truncate, toNumber, toString } from "lodash";
+import { OrderData, OrderState } from "./types";
+import { toNumber, toString } from "lodash";
+import { FieldValues, useForm, UseFormHandleSubmit } from "react-hook-form";
 
 const PaymentForm = ({ getPrice, order }: OrderState) => {
+  const [qty, setQty] = useState(1);
   const { price } = order;
   const priceOverFee = toNumber(price);
-  const pricePlusFee = priceOverFee * 1.052;
+  const priceTimesQty = priceOverFee * qty;
+  const pricePlusFee = (priceTimesQty * 1.052).toFixed(2);
   const priceConvertedToString = toString(pricePlusFee);
 
-  const shortPrice = truncate(priceConvertedToString, {
-    length: 4,
-    omission: "",
-  });
+  const { register, handleSubmit } = useForm<OrderData>();
+  const onSubmit = ({ asset }: OrderData) => {
+    const qtyNumbered = toNumber(asset);
+    setQty(qtyNumbered);
+  };
 
   useEffect(() => {
     getPrice("USDTBRL");
@@ -27,16 +36,20 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
 
   const DataForm = () => {
     return (
-      <Form className="m-4" id={styles.PaymentForm}>
+      <Form
+        className="m-4"
+        id={styles.PaymentForm}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <SwitchOptions />
         <Form.Group className="mb-3" controlId="formCrypto">
           <Form.Label className={styles.labelForm}>MOEDA</Form.Label>
           <InputGroup className="mb-3">
             <FormControl
               className={styles.inputForm}
-              placeholder="1"
-              aria-label="1"
               aria-describedby="fiat"
+              defaultValue={qty}
+              {...register("asset")}
             />
             <InputGroup.Text className={styles.labelCurrency} id="fiat">
               USDT
@@ -48,9 +61,10 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
           <InputGroup className="mb-3">
             <FormControl
               className={styles.inputForm}
-              placeholder={shortPrice}
+              placeholder={priceConvertedToString}
               aria-label="Total value reais"
               aria-describedby="fiat"
+              {...register("fiat")}
             />
             <InputGroup.Text className={styles.labelCurrency} id="fiat">
               Reais
@@ -63,14 +77,23 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
             <option>Binance Smart Chain</option>
           </Form.Select>
         </Form.Group>
+        <Button variant="contained" size="large" type="submit">
+          Verificar
+        </Button>
       </Form>
     );
   };
 
   const PayButton = () => {
     return (
-      <Button component={Link} variant="contained" size="large" to="/step2">
-        Comprar
+      <Button
+        component={Link}
+        variant="contained"
+        size="large"
+        type="submit"
+        to="/step2"
+      >
+        Próximo
       </Button>
     );
   };
@@ -80,8 +103,6 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
     const rightRef = React.useRef<HTMLDivElement>(null);
 
     const ToogleFunction = (e: MouseEvent) => {
-      console.log(e.currentTarget.innerHTML);
-
       if (e.currentTarget.innerHTML == "Comprar") {
         leftRef.current.className = styles.left__open;
         rightRef.current.className = styles.right;

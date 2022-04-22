@@ -18,3 +18,8 @@ export interface OrderState {
   order: Order;
   getPrice: (string) => void;
 }
+
+export type OrderData = {
+  asset: string;
+  fiat: string;
+};
