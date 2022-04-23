@@ -28,7 +28,6 @@ export const MetaMaskProvider: FC<MetaMaskProviderProps> = ({ children }) => {
 
   // Connect to MetaMask wallet
   const connect = async () => {
-    console.log("Connecting to MetaMask Wallet");
     try {
       await activate(injected);
     } catch (error) {
@@ -38,7 +37,6 @@ export const MetaMaskProvider: FC<MetaMaskProviderProps> = ({ children }) => {
 
   // Disconnect from Metamask wallet
   const disconnect = async () => {
-    console.log("Deactivating...");
     try {
       await deactivate();
     } catch (error) {

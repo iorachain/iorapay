@@ -5,9 +5,7 @@ import Button from "@mui/material/Button";
 import useMetaMaskChecker from "hooks/useMetamaskChecker";
 import { useEffect } from "react";
 import useMetaMask from "hooks/useMetaMask";
-import { isBrowser } from "react-device-detect";
 import NoMetamask from "../../assets/imgs/nometamask.png";
-import GrayBox from "../UI/GrayBox";
 
 const MetamaskIntegration = () => {
   const { connect } = useMetaMask();

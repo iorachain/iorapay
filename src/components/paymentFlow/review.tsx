@@ -6,10 +6,17 @@ import { Link } from "react-router-dom";
 import GrayBox from "../UI/GrayBox";
 import GrayButtonArea from "../UI/GrayButtonArea";
 import useMetaMask from "hooks/useMetaMask";
+import { connect } from "react-redux";
+import { OrderState } from "./types";
+import { toNumber } from "lodash";
 
-const PaymentForm = () => {
+const Review = ({ order }: OrderState) => {
+  const { symbol, qty, price } = order;
+
   const DataForm = () => {
     const { isActive, account } = useMetaMask();
+    const total = qty * toNumber(price);
+    const totalFixed = "R$ " + total.toFixed(2);
 
     const shortAddress =
       isActive &&
@@ -54,13 +61,27 @@ const PaymentForm = () => {
           </InputGroup>
         </Form.Group>
         <Form.Group controlId="formValue">
-          <Form.Label className={styles.labelForm}>MOEDA</Form.Label>
+          <Form.Label className={styles.labelForm}>MÉTODO</Form.Label>
           <InputGroup className="mb-3">
             <FormControl
               className={styles.inputFormMail}
-              placeholder="BTC"
-              aria-label="BTC"
-              aria-describedby="BTC"
+              value={"PIX"}
+              aria-label={"PIX"}
+              aria-describedby={"PIX"}
+              readOnly
+              disabled
+            />
+          </InputGroup>
+        </Form.Group>
+        <Form.Group controlId="formValue">
+          <Form.Label className={styles.labelForm}>OPERAÇÃO</Form.Label>
+          <InputGroup className="mb-3">
+            <FormControl
+              className={styles.inputFormMail}
+              value={symbol}
+              aria-label={symbol}
+              aria-describedby={symbol}
+              readOnly
               disabled
             />
           </InputGroup>
@@ -70,10 +91,11 @@ const PaymentForm = () => {
           <InputGroup className="mb-3">
             <FormControl
               className={styles.inputFormMail}
-              placeholder="R$ 3.200,00"
+              value={totalFixed}
               aria-label="TOTAL"
               aria-describedby="total"
               disabled
+              readOnly
             />
           </InputGroup>
         </Form.Group>
@@ -103,4 +125,8 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;
+const mapStateToProps = (state: OrderState) => ({
+  order: state.order,
+});
+
+export default connect(mapStateToProps, null)(Review);

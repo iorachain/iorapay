@@ -4,6 +4,7 @@ export interface Order {
   from: string;
   loading: true;
   price: string;
+  qty: number;
   symbol: string;
   to: number;
   typeFrom: string;
@@ -16,7 +17,7 @@ export interface TickerPrice {
 
 export interface OrderState {
   order: Order;
-  getPrice: (string) => void;
+  getPrice?: (string, number?) => void;
 }
 
 export type OrderData = {

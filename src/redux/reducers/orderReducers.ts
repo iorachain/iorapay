@@ -1,3 +1,4 @@
+import { timeStamp } from "console";
 import {
   INIT_ORDER,
   CALCULATE_ORDER,
@@ -15,8 +16,11 @@ const initialState = {
   symbol: "USDTBRL",
   price: "",
   fees: 1,
+  qty: 1,
   errors: "",
   loading: false,
+  initTimeStamp: 0,
+  updateTimeStam: 0,
 };
 
 export default function (state = initialState, action: any) {
@@ -25,14 +29,17 @@ export default function (state = initialState, action: any) {
       return {
         ...state,
         fees: action.fees,
+        loading: true,
       };
 
     case CALCULATE_ORDER:
       return {
         ...state,
-        loading: true,
+        loading: false,
         symbol: action.symbol,
         price: action.price,
+        initTimeStamp: action.initTimeStamp,
+        qty: action.qty,
       };
     case CONFIRM_ORDER:
       return {

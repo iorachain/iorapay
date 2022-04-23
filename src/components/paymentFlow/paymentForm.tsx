@@ -1,9 +1,4 @@
-import React, {
-  FormEventHandler,
-  MouseEvent,
-  useEffect,
-  useState,
-} from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import { Form, InputGroup, FormControl } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import Button from "@mui/material/Button";
@@ -14,11 +9,11 @@ import { connect } from "react-redux";
 import { getPrice } from "../../redux/actions/orderActions";
 import { OrderData, OrderState } from "./types";
 import { toNumber, toString } from "lodash";
-import { FieldValues, useForm, UseFormHandleSubmit } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const PaymentForm = ({ getPrice, order }: OrderState) => {
-  const [qty, setQty] = useState(1);
   const { price } = order;
+  const [qty, setQty] = useState(1);
   const priceOverFee = toNumber(price);
   const priceTimesQty = priceOverFee * qty;
   const pricePlusFee = (priceTimesQty * 1.052).toFixed(2);
@@ -31,8 +26,8 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
   };
 
   useEffect(() => {
-    getPrice("USDTBRL");
-  }, []);
+    getPrice("USDTBRL", qty);
+  }, [qty]);
 
   const DataForm = () => {
     return (
@@ -46,9 +41,14 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
           <Form.Label className={styles.labelForm}>MOEDA</Form.Label>
           <InputGroup className="mb-3">
             <FormControl
+              autoFocus
               className={styles.inputForm}
               aria-describedby="fiat"
+              type="number"
               defaultValue={qty}
+              onChange={handleSubmit(onSubmit)}
+              onBlurCapture={handleSubmit(onSubmit)}
+              onTouchEnd={handleSubmit(onSubmit)}
               {...register("asset")}
             />
             <InputGroup.Text className={styles.labelCurrency} id="fiat">
@@ -64,6 +64,8 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
               placeholder={priceConvertedToString}
               aria-label="Total value reais"
               aria-describedby="fiat"
+              type="number"
+              readOnly
               {...register("fiat")}
             />
             <InputGroup.Text className={styles.labelCurrency} id="fiat">
@@ -77,9 +79,6 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
             <option>Binance Smart Chain</option>
           </Form.Select>
         </Form.Group>
-        <Button variant="contained" size="large" type="submit">
-          Verificar
-        </Button>
       </Form>
     );
   };
@@ -123,7 +122,6 @@ const PaymentForm = ({ getPrice, order }: OrderState) => {
       </div>
     );
   };
-
   return (
     <>
       <GrayBox childComp={<DataForm />} />
