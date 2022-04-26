@@ -11,12 +11,13 @@ import { OrderState } from "./types";
 import { toNumber } from "lodash";
 
 const Review = ({ order }: OrderState) => {
-  const { symbol, qty, price } = order;
+  const { symbol, qty, price, fees } = order;
 
   const DataForm = () => {
     const { isActive, account } = useMetaMask();
     const total = qty * toNumber(price);
-    const totalFixed = "R$ " + total.toFixed(2);
+    const totalFeePlus = total * fees;
+    const totalFixed = "R$ " + totalFeePlus.toFixed(2);
 
     const shortAddress =
       isActive &&

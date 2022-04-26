@@ -12,11 +12,11 @@ import { toNumber, toString } from "lodash";
 import { useForm } from "react-hook-form";
 
 const PaymentForm = ({ getPrice, order }: OrderState) => {
-  const { price } = order;
+  const { price, fees } = order;
   const [qty, setQty] = useState(1);
   const priceOverFee = toNumber(price);
   const priceTimesQty = priceOverFee * qty;
-  const pricePlusFee = (priceTimesQty * 1.052).toFixed(2);
+  const pricePlusFee = (priceTimesQty * fees).toFixed(2);
   const priceConvertedToString = toString(pricePlusFee);
 
   const { register, handleSubmit } = useForm<OrderData>();
